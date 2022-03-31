@@ -7,7 +7,7 @@
 			}
 		}
 	    ,{
-            "path" : "components/eatWhat/eatWhat/eatWhat",
+            "path" : "pages/eatWhat/eatWhat",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "吃点什么...",

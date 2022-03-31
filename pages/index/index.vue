@@ -12,7 +12,6 @@
 			</view>
 			<view style="background-color: #FFFFFF;"></view>
 			<view style="background-color: #FFFFFF;"></view>
-			<!-- <view></view> -->
 		</view>
 	</view>
 </template>
@@ -32,7 +31,7 @@
 			eatWhat() {
 				console.log(111);
 				uni.navigateTo({
-					url: '../../components/eatWhat/eatWhat/eatWhat'
+					url: '../eatWhat/eatWhat'
 				})
 			}
 		}
