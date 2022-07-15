@@ -22,10 +22,6 @@ function cache(key, value, time = 3600 * 24 * 24 * 24) {
 	}
 }
 
-
-
-
-
 module.exports = {
 	cache
 }

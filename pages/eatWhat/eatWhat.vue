@@ -16,7 +16,7 @@
 				</view>
 				<text>食物可以单个添加也可以通过 , 隔开</text>
 			</view>
-			<view class="" v-if="!isAdd&&!isTodayFood">xxxxxx</view>
+			<view class="textShow" v-if="!isAdd&&!isTodayFood">吃点什么</view>
 		</view>
 		<view class="tip" :class="[{isTodayFood:isTodayFood}]" @tap="showToday">
 			点我查看今天吃点什么...
@@ -25,26 +25,18 @@
 			点我添加可选食物...
 		</view>
 		<view class="foodList">
-			<!-- <text>Breakfast</text>
+			<text>早餐</text>
 			<view class="foods" v-for="(bfood,index) in totalBreakfast" :key="index+bfood">
-				{{index}}-{{bfood}}
+				{{bfood}}
 			</view>
-			<text>Lunch</text>
+			<text>午餐</text>
 			<view class="foods" v-for="(lfood,index) in totalLunch" :key="index+lfood">
-				{{index}}-{{lfood}}
+				{{lfood}}
 			</view>
-			<text>Dinner</text>
+			<text>晚餐</text>
 			<view class="foods" v-for="(dfood,index) in totalDinner" :key="index+dfood">
-				{{index}}-{{dfood}}
-			</view> -->
-			<uni-table stripe emptyText="暂无更多数据">
-				<uni-tr>
-					<uni-th align="center">xxx</uni-th>
-				</uni-tr>
-				<uni-tr>
-					<uni-td>aa</uni-td>
-				</uni-tr>
-			</uni-table>
+				{{dfood}}
+			</view>
 		</view>
 		<view class="mark" @tap="markTap"></view>
 	</view>
@@ -95,6 +87,7 @@
 					break;
 				}
 				}
+				// this.$forceUpdate()
 			},
 			showAdd() {
 				this.isTodayFood = false;
@@ -104,9 +97,6 @@
 				this.totalBreakfast = JSON.parse(utils.cache('breakfast'));
 				this.totalLunch = JSON.parse(utils.cache('lunch'));
 				this.totalDinner = JSON.parse(utils.cache('dinner'));
-				console.log(this.totalBreakfast);
-				console.log(this.totalLunch);
-				console.log(this.totalDinner);
 			},
 			showToday() {
 				let tbRdm = Math.floor(Math.random() * this.totalBreakfast.length);
@@ -148,8 +138,6 @@
 			margin-top: 10px;
 			background-color: $uni-bg-color-base;
 			border-radius: $uni-border-radius-base;
-			transition: 1s;
-			// transform: translateY(-190px);
 		}
 
 		.todayFood {
@@ -159,11 +147,9 @@
 			flex-direction: column;
 			height: auto;
 		}
-
+		
 		.addFood {
-			// position: absolute;
 			background-color: $uni-bg-color-base;
-			// width: 350px;
 			height: 150px;
 			border-radius: $uni-border-radius-base;
 			top: 5%;
@@ -172,7 +158,6 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			// display: none;
 
 			.ipt {
 				width: 90%;
@@ -205,6 +190,8 @@
 					border: 1px solid white;
 					border-right: none;
 					background-color: #FFFFFF;
+					text-indent: 0;
+					color: black;
 				}
 
 				.add {
@@ -213,9 +200,11 @@
 					line-height: 40px;
 					font-size: 30px;
 					font-weight: 700;
-					text-align: center;
 					margin-right: 3px;
+					color: black;
+					text-indent: 0;
 					background-color: #FFFFFF;
+					text-align: center;
 					border-bottom-right-radius: $uni-border-radius-base;
 					border-top-right-radius: $uni-border-radius-base;
 				}
@@ -228,24 +217,25 @@
 				text-align: center;
 			}
 		}
-
+		
+		.textShow{
+			text-align: center;
+			text-indent: 0;
+		}
 		.foodList {
 			width: 90%;
-			min-height: 500px;
 			margin-top: 15px;
 			background-color: $uni-bg-color-base;
 			border-radius: $uni-border-radius-base;
 			font-size: 30px;
 			color: #FFFFFF;
 			text-align: center;
-			// display: none;
 
-			.food {}
+			.foods {
+				font-size: 20px;
+				margin: 10px 0;
+			}
 		}
-
-		// .foodList {
-		// 	.food {}
-		// }
 
 		.mark {
 			display: none;
