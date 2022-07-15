@@ -6,11 +6,35 @@
 				"navigationBarTitleText": "无用"
 			}
 		}
+		,{
+			"path": "pages/webView/webView",
+			"style": {
+				"navigationBarTitleText": "无用"
+			}
+		}
 	    ,{
             "path" : "pages/eatWhat/eatWhat",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "吃点什么...",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+		    "path" : "pages/hotSearch/hotSearch",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "热搜浏览",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "components/loading/loading/loading",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             

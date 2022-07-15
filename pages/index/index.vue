@@ -7,6 +7,21 @@
 			<view @tap="eatWhat">
 				吃点什么..
 			</view>
+			<view @tap="hotSearch">
+				热搜浏览
+			</view>
+			<view @tap="onlineClass">
+				网课查询
+			</view>
+			<view @tap="translate">
+				翻译
+			</view>
+			<view @tap="movies">
+				电影票房
+			</view>
+			<view @tap="knowWorld">
+				读世界
+			</view>
 			<view>
 				...
 			</view>
@@ -17,7 +32,6 @@
 </template>
 
 <script>
-	// import ss from ''
 	export default {
 		data() {
 			return {
@@ -32,6 +46,12 @@
 				console.log(111);
 				uni.navigateTo({
 					url: '../eatWhat/eatWhat'
+				})
+			},
+			hotSearch(){
+				console.log(222);
+				uni.navigateTo({
+					url: '../hotSearch/hotSearch'
 				})
 			}
 		}
@@ -61,7 +81,7 @@
 			width: 100%;
 			height: 100%;
 			display: flex;
-			justify-content: center;
+			justify-content: space-around;
 			flex-wrap: wrap;
 
 			view {

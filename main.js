@@ -1,8 +1,19 @@
 import App from './App'
+// import axios from './util/http.js'
+import loading from './components/loading/loading.vue';
+Vue.component('view-loader',loading);
+
+import axios from 'axios'
 // #ifndef VUE3
 import Vue from 'vue'
+
+const baseURL='https://api.vvhan.com/api/';
 Vue.config.productionTip = false
+
+Vue.prototype.$axios = axios;
+
 App.mpType = 'app'
+
 const app = new Vue({
 	...App
 })
@@ -16,7 +27,8 @@ import {
 export function createApp() {
 	const app = createSSRApp(App)
 	return {
-		app
+		app,
+		baseUrl
 	}
 }
 // #endif
