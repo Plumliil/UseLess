@@ -31,10 +31,19 @@
 		    
 		}
         ,{
-            "path" : "components/loading/loading/loading",
+            "path" : "components/loading/loading",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/knowWorld/knowWorld",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "每天60s读世界",
                 "enablePullDownRefresh": false
             }
             

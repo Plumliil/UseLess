@@ -1,5 +1,5 @@
 <template>
-	<view class="mark" v-if="isLoading">
+	<view class="mark" v-if="isLoading" :style="{top:top}">
 		<view class="loading">
 			<text class="ball1"></text>
 			<text class="ball2"></text>
@@ -17,6 +17,10 @@
 			isLoading:{
 				type:Boolean,
 				required:true
+			},
+			top:{
+				type:String,
+				default:'50px'
 			}
 		}
 	}
@@ -30,12 +34,10 @@
 	$baidu:#e10602;
 	.mark{
 		position: fixed;
-		// display: flex;
-		// justify-content: center;
 		background-color: white;
 		width: 100%;
 		height: 100%;
-		top: 52px;
+		// top: 52px;
 		color: $uni-text-color;
 		z-index: 999;
 		.loading{

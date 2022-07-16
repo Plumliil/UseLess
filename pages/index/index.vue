@@ -8,19 +8,31 @@
 				吃点什么..
 			</view>
 			<view @tap="hotSearch">
-				热搜浏览
+				热搜
 			</view>
-			<view @tap="onlineClass">
+<!-- 			<view @tap="onlineClass">
 				网课查询
 			</view>
 			<view @tap="translate">
 				翻译
 			</view>
 			<view @tap="movies">
-				电影票房
-			</view>
+				票房
+			</view> -->
 			<view @tap="knowWorld">
-				读世界
+				60s
+			</view>
+			<view @click="aboutMe">
+				关于
+			</view>	
+			<view>
+				...
+			</view>
+			<view>
+				...
+			</view>
+			<view>
+				...
 			</view>
 			<view>
 				...
@@ -43,16 +55,22 @@
 		},
 		methods: {
 			eatWhat() {
-				console.log(111);
 				uni.navigateTo({
 					url: '../eatWhat/eatWhat'
 				})
 			},
 			hotSearch(){
-				console.log(222);
 				uni.navigateTo({
 					url: '../hotSearch/hotSearch'
 				})
+			},
+			knowWorld(){
+				uni.navigateTo({
+					url: '../knowWorld/knowWorld'
+				})
+			},
+			aboutMe(){
+				console.log('aboutme')
 			}
 		}
 	}
@@ -65,7 +83,7 @@
 		flex-wrap: wrap;
 		
 		.tip {
-			width: 90%;
+			width: 93%;
 			height: 200px;
 			color: #FFFFFF;
 			text-indent: 20px;
@@ -85,13 +103,13 @@
 			flex-wrap: wrap;
 
 			view {
-				width: 80px;
-				height: 80px;
+				width: 70px;
+				height: 70px;
 				background-color: #336666;
 				margin: 10px;
 				color: #FFFFFF;
 				text-align: center;
-				line-height: 80px;
+				line-height: 70px;
 				border-radius: 10px;
 			}
 		}

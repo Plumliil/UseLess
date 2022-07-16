@@ -22,6 +22,9 @@ function cache(key, value, time = 3600 * 24 * 24 * 24) {
 	}
 }
 
+// function deadLine(key, value,time) {
+// 	let nowTime = Date.parse(new Date()) / 1000;
+// }
 module.exports = {
 	cache
 }

@@ -1,6 +1,6 @@
 <template>
 	<view class="hotSearch">
-		<view-loader :isLoading="isLoading"></view-loader>
+		<view-loader :isLoading="isLoading" top="52px"></view-loader>
 		<view class="tab">
 			<uni-list>
 				<uni-list-item v-for="(item,index) in hotListsMenu" @tap="changeList(item)"
@@ -10,7 +10,8 @@
 		<list class="listData">
 			<cell class="listItem" v-for="(item, index) in listData" :key="item.index"
 				:style="{color:activeStyle['background-color']}">
-				<text @tap="toNewView(item.mobilUrl)">{{item.index}}:{{item.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+				<text
+					@tap="toNewView(item.mobilUrl)">{{item.index}}:{{item.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
 				<text style="margin-left: 20px;font-size:10px;">热度:{{item.hot}}</text>
 			</cell>
 		</list>
@@ -68,10 +69,15 @@
 			}
 		},
 		onLoad() {
-			this.getHotData('wbHot')
+			this.isLoading = true;
+			this.getHotData('wbHot');
+			setTimeout(() => {
+				this.isLoading = false;
+			}, 500)
 		},
 		methods: {
 			changeList(value) {
+				// tabBar切换热搜列表
 				this.listData = null;
 				this.isLoading = true;
 				this.hotListsMenu.forEach(item => {
@@ -84,11 +90,9 @@
 				}
 				this.hotListsMenu[value.id].active = true;
 				this.getHotData(value.name)
-				// if(this.listData){
 				setTimeout(() => {
 					this.isLoading = false;
 				}, 500)
-				// }
 			},
 			getHotData(type) {
 				// 获取热点数据
@@ -106,9 +110,9 @@
 				// plus.runtime.openURL(v);
 				console.log(v + '')
 				let url = encodeURIComponent(v + '');
-				console.log('跳转',url)
+				console.log('跳转', url)
 				uni.navigateTo({
-					url:'../webView/webView?url='+url
+					url: '../webView/webView?url=' + url
 				})
 			}
 		}

@@ -3,17 +3,13 @@ import App from './App'
 import loading from './components/loading/loading.vue';
 Vue.component('view-loader',loading);
 
-import axios from 'axios'
 // #ifndef VUE3
 import Vue from 'vue'
 
 const baseURL='https://api.vvhan.com/api/';
 Vue.config.productionTip = false
-
-Vue.prototype.$axios = axios;
-
 App.mpType = 'app'
-
+const baseUrl='https://api.vvhan.com/api/'
 const app = new Vue({
 	...App
 })
