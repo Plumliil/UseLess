@@ -22,16 +22,19 @@
 			}
 		},
 		onLoad() {
-
-			let oldValue = utils.cache('60s');
+			let timeConfig = {
+				interval: 1,
+				runNow: true,
+				time: '00:00:01'
+			}
+  			let oldValue = utils.cache('60s');
 			if (oldValue) {
 				this.dataList = oldValue;
 				setTimeout(() => {
 					this.isLoading = false;
 				}, 500)
 			} else {
-				this.getData();
-				console.log(111)
+				utils.timeoutFunc(timeConfig, this.getData)
 				setTimeout(() => {
 					this.isLoading = false;
 				}, 500)
@@ -45,7 +48,7 @@
 					method: 'GET',
 					success: (res) => {
 						this.dataList = res.data;
-						utils.cache('60s', this.dataList, 60 * 60 * 24);
+						utils.cache('60s', this.dataList, 60);
 					}
 				})
 			}
@@ -70,7 +73,7 @@
 		justify-content: space-around;
 		align-items: center;
 		font-size: 20px;
-		
+
 	}
 
 	.dataList {
