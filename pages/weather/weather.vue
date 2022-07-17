@@ -83,7 +83,6 @@
 						this.dataList.push(res.data.data.yesterday);
 						res.data.data.forecast.forEach(item => {
 							this.dataList.push(item)
-							console.log(this.addTempInfo(item.type))
 						})
 						this.dataList.forEach(item => {
 							item['typeImgUrl'] =
@@ -266,9 +265,7 @@
 				}
 			},
 			changeList(item) {
-				console.log(item)
 				this.currentDay = item
-				console.log(this.addTempInfo(item.type))
 			}
 		}
 	}
