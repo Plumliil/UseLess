@@ -57,6 +57,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/translate/translate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "翻译",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
