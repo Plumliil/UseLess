@@ -13,7 +13,7 @@
 			<view @tap="onlineClass">
 				网课查询
 			</view>
-			<view @tap="translate">
+			<view @tap="toTranslate">
 				翻译
 			</view>
 			<view @tap="movies">
@@ -70,6 +70,12 @@
 			knowWorld(){
 				uni.navigateTo({
 					url: '../knowWorld/knowWorld'
+				})
+			},
+			toTranslate(){
+				console.log('翻译')
+				uni.navigateTo({
+					url: '../translate/translate'
 				})
 			},
 			toWeather(){
