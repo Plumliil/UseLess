@@ -101,16 +101,13 @@
 					method: 'GET',
 					success: (res) => {
 						this.listData = res.data.data;
-						console.log(this.listData)
 					}
 				})
 			},
 			toNewView(v) {
 				// 链接跳转
 				// plus.runtime.openURL(v);
-				console.log(v + '')
 				let url = encodeURIComponent(v + '');
-				console.log('跳转', url)
 				uni.navigateTo({
 					url: '../webView/webView?url=' + url
 				})
