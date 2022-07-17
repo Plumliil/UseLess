@@ -21,6 +21,11 @@
 			top:{
 				type:String,
 				default:'50px'
+			},
+			height:{
+				type:String,
+				default:'100%',
+				required:false
 			}
 		}
 	}
