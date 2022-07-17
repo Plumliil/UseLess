@@ -10,7 +10,7 @@
 			<view @tap="hotSearch">
 				热搜
 			</view>
-<!-- 			<view @tap="onlineClass">
+			<view @tap="onlineClass">
 				网课查询
 			</view>
 			<view @tap="translate">
@@ -18,7 +18,10 @@
 			</view>
 			<view @tap="movies">
 				票房
-			</view> -->
+			</view>
+			<view @tap="toWeather">
+				天气
+			</view>
 			<view @tap="knowWorld">
 				60s
 			</view>
@@ -67,6 +70,12 @@
 			knowWorld(){
 				uni.navigateTo({
 					url: '../knowWorld/knowWorld'
+				})
+			},
+			toWeather(){
+				console.log(111)
+				uni.navigateTo({
+					url: '../weather/weather'
 				})
 			},
 			aboutMe(){

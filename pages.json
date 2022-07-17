@@ -48,6 +48,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/weather/weather",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "天气",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
