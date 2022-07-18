@@ -11,7 +11,7 @@
 			<text style="font-size: 32px;">{{currentDay.type}}</text>
 			<text>
 				<image src="../../static/imgs/weather/1042.svg" mode=""></image>
-				<text>:{{currentDay.low.substring(2)}}-{{currentDay.high.substring(2)}}</text>
+				<text>:{{currentDay.low}}-{{currentDay.high}}</text>
 			</text>
 			<text v-if="currentDay.fengxiang">
 				<image src="../../static/imgs/weather/2001.svg" mode=""></image>
@@ -41,9 +41,7 @@
 			};
 		},
 		onLoad() {
-			setTimeout(() => {
-				this.isLoading = false
-			}, 1000)
+
 			const {
 				windowWidth,
 				windowHeight,
@@ -52,6 +50,11 @@
 			this.windowHeight = windowHeight + 'px';
 			this.getAddress();
 			this.getData(this.city)
+			if (this.dataList) {
+				setTimeout(() => {
+					this.isLoading = false
+				}, 1000)
+			}
 		},
 		methods: {
 			getAddress() {
@@ -62,6 +65,7 @@
 					success: (res) => {
 						const reg = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
 						let ip = reg.exec(res.data);
+						console.log(ip[0])
 						// 获取位置
 						uni.request({
 							url: 'https://api.vvhan.com/api/getIpInfo?ip=' + ip[0],
@@ -91,7 +95,7 @@
 							item.date = item.date.replace('日', '')
 						})
 						this.currentDay = this.dataList[1];
-						
+
 					}
 				})
 			},
