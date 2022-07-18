@@ -1,6 +1,9 @@
 //B页面
 <template>
-	<web-view :src="url" :progress="true"></web-view>
+	<view class="view">
+		<view-loader :isLoading="isLoading" top="0"></view-loader>
+		<web-view :src="url" :progress="true"></web-view>
+	</view>
 </template>
  
 <script>
@@ -8,18 +11,21 @@
         data() {
             return {
                 url:'',
-                title:''
+                title:'',
+				isLoading:true
             }
         },
         onLoad(option) {
-			console.log(option)
+			setTimeout(() => {
+				this.isLoading = false
+			},500)
             this.url = decodeURIComponent(option.url);
-			// console.log(this.url)
         },
-		// onReady(){//改变标题
-  //           uni.setNavigationBarTitle({
-  //               title:this.title
-  //           })
-  //       }
     }
 </script>
+<style lang="scss" scoped>
+	.view{
+		width: 100%;
+		height: 100%;
+	}
+</style>
