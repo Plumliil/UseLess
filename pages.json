@@ -66,6 +66,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/movie/movie",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "电影新片榜",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/lanZou/lanZou",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "蓝奏云解析",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

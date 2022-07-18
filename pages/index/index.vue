@@ -4,20 +4,23 @@
 			一个并没有什么大用的软件...
 		</view>
 		<view class="content">
-			<view @tap="eatWhat">
+		<!-- 	<view @tap="eatWhat">
 				吃点什么..
+			</view> -->
+			<view @tap="toLanZou">
+				蓝奏
 			</view>
 			<view @tap="hotSearch">
 				热搜
 			</view>
-			<view @tap="onlineClass">
+			<!-- 	<view @tap="onlineClass">
 				网课查询
-			</view>
+			</view> -->
 			<view @tap="toTranslate">
 				翻译
 			</view>
-			<view @tap="movies">
-				票房
+			<view @tap="toMovie">
+				电影
 			</view>
 			<view @tap="toWeather">
 				天气
@@ -27,20 +30,10 @@
 			</view>
 			<view @click="aboutMe">
 				关于
-			</view>	
-			<view>
-				...
 			</view>
 			<view>
 				...
 			</view>
-			<view>
-				...
-			</view>
-			<view>
-				...
-			</view>
-			<view style="background-color: #FFFFFF;"></view>
 			<view style="background-color: #FFFFFF;"></view>
 		</view>
 	</view>
@@ -62,29 +55,40 @@
 					url: '../eatWhat/eatWhat'
 				})
 			},
-			hotSearch(){
+			toLanZou(){
+				uni.navigateTo({
+					url:'../lanZou/lanZou'
+				})
+			},
+			hotSearch() {
 				uni.navigateTo({
 					url: '../hotSearch/hotSearch'
 				})
 			},
-			knowWorld(){
+			knowWorld() {
 				uni.navigateTo({
 					url: '../knowWorld/knowWorld'
 				})
 			},
-			toTranslate(){
+			toTranslate() {
 				console.log('翻译')
 				uni.navigateTo({
 					url: '../translate/translate'
 				})
 			},
-			toWeather(){
+			toWeather() {
 				console.log(111)
 				uni.navigateTo({
 					url: '../weather/weather'
 				})
 			},
-			aboutMe(){
+			toMovie() {
+				console.log(111)
+				uni.navigateTo({
+					url: '../movie/movie'
+				})
+			},
+			aboutMe() {
 				console.log('aboutme')
 			}
 		}
@@ -96,7 +100,7 @@
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
-		
+
 		.tip {
 			width: 93%;
 			height: 200px;
