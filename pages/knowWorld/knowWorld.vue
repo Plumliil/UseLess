@@ -48,7 +48,7 @@
 					method: 'GET',
 					success: (res) => {
 						this.dataList = res.data;
-						utils.cache('60s', this.dataList, 60*60*12);
+						utils.cache('60s', this.dataList, 60*60);
 					}
 				})
 			}
