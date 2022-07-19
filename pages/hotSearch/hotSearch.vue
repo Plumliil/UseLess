@@ -19,7 +19,6 @@
 </template>
 
 <script>
-	let axios = Vue.prototype.$axios
 	export default {
 		data() {
 			return {
