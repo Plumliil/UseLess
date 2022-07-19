@@ -13,6 +13,7 @@
 </template>
 
 <script>
+		import utils from '../../commons/js/utils.js'
 	export default {
 		data() {
 			return {
@@ -21,24 +22,32 @@
 			};
 		},
 		onLoad() {
-			uni.request({
-				url: 'https://api.vvhan.com/api/douban',
-				method: 'GET',
-				success: (res) => {
-					this.dataList = res.data.data
-					console.log(res)
-				}
-			})
-			setTimeout(() => {
-				this.isLoading = false
-			},500)
+			let oldValue = utils.cache('movie');
+			if (oldValue) {
+				this.dataList = oldValue;
+				setTimeout(() => {
+					this.isLoading = false;
+				}, 500)
+			} else {
+				uni.request({
+					url: 'https://api.vvhan.com/api/douban',
+					method: 'GET',
+					success: (res) => {
+						this.dataList = res.data.data
+						utils.cache('movie', this.dataList, 60*60*12);
+						console.log(res)
+					}
+				})
+				setTimeout(() => {
+					this.isLoading = false;
+				}, 500)
+			}
 		},
 		methods: {
 			goMovie(url) {
 				uni.navigateTo({
 					url: '../webView/webView?url=' + url,
 				})
-				console.log(this.dataList)
 			}
 		}
 	}
