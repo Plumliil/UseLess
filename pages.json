@@ -84,6 +84,23 @@
             }
             
         }
+        ,{
+            "path" : "pages/interview/interview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "面试",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/aboutMe/aboutMe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "关于",
+                "enablePullDownRefresh": false
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -4,16 +4,19 @@
 			一个并没有什么大用的软件...
 		</view>
 		<view class="content">
-		<!-- 	<view @tap="eatWhat">
+			<!-- 	<view @tap="eatWhat">
 				吃点什么..
 			</view> -->
+			<view @tap="toInterview">
+				面试
+			</view>
 			<view @tap="toLanZou">
 				蓝奏
 			</view>
 			<view @tap="hotSearch">
 				热搜
 			</view>
-			<!-- 	<view @tap="onlineClass">
+			<!-- 	<view @tap="onlineClass">0
 				网课查询
 			</view> -->
 			<view @tap="toTranslate">
@@ -31,9 +34,11 @@
 			<view @click="aboutMe">
 				关于
 			</view>
-			<view>
+			<view @tap="more">
 				...
 			</view>
+			<view style="background-color: #FFFFFF;"></view>
+			<view style="background-color: #FFFFFF;"></view>
 			<view style="background-color: #FFFFFF;"></view>
 		</view>
 	</view>
@@ -55,9 +60,9 @@
 					url: '../eatWhat/eatWhat'
 				})
 			},
-			toLanZou(){
+			toLanZou() {
 				uni.navigateTo({
-					url:'../lanZou/lanZou'
+					url: '../lanZou/lanZou321'
 				})
 			},
 			hotSearch() {
@@ -88,8 +93,19 @@
 					url: '../movie/movie'
 				})
 			},
+			toInterview() {
+				plus.runtime.openURL('https://interview.html5.wiki/');
+			},
 			aboutMe() {
-				console.log('aboutme')
+				uni.navigateTo({
+					url:'../aboutMe/aboutMe'
+				})
+			},
+			more(){
+				uni.showModal({
+					content: '更多功能正在努力开发中...(‾◡◝)',
+					showCancel: false
+				});
 			}
 		}
 	}
